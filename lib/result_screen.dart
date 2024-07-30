@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:image_and_button/dummy_data/questions.dart';
+import 'package:image_and_button/quiz.dart';
+import 'package:image_and_button/start_screen.dart';
 import 'package:image_and_button/summary.dart';
 
 class ResultScreen extends StatelessWidget {
-  const ResultScreen({super.key, required this.choosenAns});
+  const ResultScreen({super.key, required this.choosenAns, required this.onSelectRestart});
 
   final List<String> choosenAns;
+  final void Function () onSelectRestart;
 
   List<Map<String,Object>>  getSummaryData(){
     final List<Map<String,Object>>summary =[];
@@ -56,7 +59,10 @@ class ResultScreen extends StatelessWidget {
               height: 30,
             ),
             TextButton(
-              onPressed: () {},
+              onPressed: onSelectRestart,
+              // onPressed: () {
+              //   //Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const Quiz()));
+              // },
               child: const Text("Restart Quiz"),
             ),
           ],

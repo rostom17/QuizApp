@@ -19,7 +19,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
   void nextQuestion(String selectedAns){
     widget.onSlecetAns(selectedAns);
     setState(() {
-      curQusIdx =curQusIdx + 1;
+      curQusIdx = curQusIdx + 1;
       // if(curQusIdx > 5){
       //   curQusIdx = 1;
       // }
